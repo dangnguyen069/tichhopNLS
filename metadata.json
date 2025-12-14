@@ -1,5 +1,5 @@
 {
-  "name": "Toán 7 - Chân trời sáng tạo",
-  "description": "Ứng dụng hỗ trợ học Toán lớp 7 bộ sách Chân trời sáng tạo, tích hợp trợ lý ảo AI.",
+  "name": "NLS Integrator",
+  "description": "Ứng dụng tích hợp Năng lực số (Digital Competence) vào chương trình dạy học sử dụng Gemini AI.",
   "requestFramePermissions": []
 }

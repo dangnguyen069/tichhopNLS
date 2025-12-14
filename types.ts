@@ -1,61 +1,29 @@
-export type ExerciseLevel = 'Nhận biết' | 'Thông hiểu' | 'Vận dụng' | 'Vận dụng cao';
-
-export type SectionType = 'default' | 'definition' | 'theorem' | 'example' | 'note';
-
-export interface Exercise {
-  id: string;
-  question: string;
-  hint?: string;
-  solution: string;
-  level?: ExerciseLevel;
+export interface NLSStandard {
+  domain: string; // NLS
+  component: string; // NLTP
+  indicator: string; // CHỈ BÁO
+  code: string; // MAHOA
+  level: 'TC1' | 'TC2'; // Lớp 6-7 or 8-9
 }
 
-export interface QuizOption {
-  id: string;
-  text: string;
-  isCorrect: boolean;
+export interface IntegratedItem {
+  originalContent: string;
+  suggestion: string;
+  nlsCode: string;
+  nlsIndicator: string;
+  reasoning: string;
 }
 
-export interface Quiz {
-  id: string;
-  question: string;
-  options: QuizOption[];
-  explanation?: string; // Giải thích ngắn gọn sau khi chọn
+export enum GradeLevel {
+  G6_7 = 'TC1',
+  G8_9 = 'TC2'
 }
 
-export interface Section {
-  title: string;
-  content: string[]; // Paragraphs or bullet points
-  imageUrl?: string;
-  type?: SectionType; // Phân loại để hiển thị màu sắc/icon phù hợp
-}
-
-export interface Lesson {
-  id: string;
-  title: string;
-  theory: Section[];
-  exercises: Exercise[];
-  quizzes?: Quiz[]; // Thêm danh sách câu hỏi trắc nghiệm
-}
-
-export interface Chapter {
-  id: string;
-  title: string;
-  description: string;
-  lessons: Lesson[];
-}
-
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  isError?: boolean;
-}
-
-export interface UserProgress {
-  [lessonId: string]: {
-    score: number;      // Điểm số trắc nghiệm (0-100)
-    completed: boolean; // Đã hoàn thành (đạt > 80%) hay chưa
-    isUnlocked: boolean; // Trạng thái mở khóa
-  };
+export interface AppState {
+  subject: string;
+  gradeLevel: GradeLevel;
+  content: string;
+  isLoading: boolean;
+  result: IntegratedItem[] | null;
+  error: string | null;
 }

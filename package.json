@@ -1,5 +1,5 @@
 {
-  "name": "toán-7---chân-trời-sáng-tạo",
+  "name": "nls-integrator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.0",
     "@google/genai": "^1.30.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "mammoth": "1.6.0",
+    "pdfjs-dist": "3.11.174",
+    "docx": "8.5.0",
+    "file-saver": "2.0.5"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
