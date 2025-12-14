@@ -7,7 +7,7 @@ if (!apiKey) {
   console.error("API Key is missing in environment variables.");
 }
 
-const ai = new GoogleGenAI({ apiKey: apiKey || 'dummy-key-will-fail-if-used' });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const cleanAndParseJSON = (text: string): IntegratedItem[] => {
   let cleanText = text.trim();
